@@ -219,17 +219,7 @@ class Obd2Plugin {
     return ((stm.length * 1000) + 150);
   }
 
-  /// This int value return needed time to config / please wait finish it
-  /// user Future.delayed for wait in this function
-  /// [configObdWithJSON] => start loading if you want
-  /// [Future.delayed] with int in milliseconds duration => Stop Loading
-  /// for example
-  /// Start loading ...
-  /// await Future.delayed(Duration(milliseconds: await MyApp.of(context).obd2.configObdWithJSON('json String')), (){
-  //    print("config is finished");
-  //  });
-  // Stop loading ...
-  /// Thank you for reading this document.
+
   Future<int> configObdWithJSON(String stringJson, {int lastIndex = 0, int requestCode = 2}) async {
     commandMode = Mode.config;
     bool configed = false;
